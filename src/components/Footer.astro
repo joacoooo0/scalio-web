@@ -1,0 +1,165 @@
+---
+
+---
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-cta">
+        <p class="footer-label">¿Listo para crecer?</p>
+        <h2 class="footer-headline reveal">
+          Construye tu<br /><em>futuro digital</em><br />con nosotros.
+        </h2>
+        <a href="/contacto" class="footer-btn"> Iniciar proyecto → </a>
+      </div>
+
+      <div class="footer-info">
+        <div class="footer-col">
+          <p class="footer-col-title">Páginas</p>
+          <a href="/">Inicio</a>
+          <a href="/scalio">Scalio</a>
+          <a href="/contacto">Contacto</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Contacto</p>
+          <a href="mailto:info@scalio.pe">info@scalio.pe</a>
+          <a href="https://instagram.com/scalio.pe" target="_blank"
+            >@scalio.pe</a
+          >
+          <a href="https://wa.me/51999999999">WhatsApp</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Ubicación</p>
+          <p style="color: var(--white-muted); font-size: 0.9rem;">
+            Lima, Perú
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Scalio. Todos los derechos reservados.</p>
+      <p>Páginas web estratégicas · Automatización</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 6rem 0 3rem;
+    margin-top: 8rem;
+    background: var(--dark-2);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    margin-bottom: 6rem;
+  }
+
+  .footer-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-headline {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.05;
+    margin-bottom: 2.5rem;
+    color: var(--white);
+  }
+
+  .footer-headline em {
+    font-style: italic;
+    color: var(--yellow);
+  }
+
+  .footer-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--yellow);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-btn:hover {
+    background: var(--white);
+    transform: scale(1.03);
+  }
+
+  .footer-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-col-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-col a {
+    font-size: 0.9rem;
+    color: var(--white-muted);
+    transition: color 0.3s;
+  }
+
+  .footer-col a:hover {
+    color: var(--yellow);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 900px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .footer-info {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-info {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+</style>

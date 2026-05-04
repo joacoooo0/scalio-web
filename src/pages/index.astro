@@ -1,0 +1,959 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import TransitionOverlay from "../components/TransitionOverlay.astro";
+---
+
+<Layout title="Scalio — Páginas web estratégicas y automatización">
+  <TransitionOverlay />
+  <Nav currentPage="/" />
+
+  <!-- ─── HERO ──────────────────────────────── -->
+  <section class="hero" id="hero">
+    <!-- Animated background blobs -->
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        Agencia digital · Lima, Perú
+      </div>
+
+      <h1 class="hero-headline" id="hero-headline">
+        <span class="line" id="line1">Hacemos negocios</span>
+        <span class="line italic" id="line2">escalar.</span>
+      </h1>
+
+      <div class="hero-sub" id="hero-sub">
+        <p>
+          Creamos páginas web estratégicas y automatizamos procesos<br /> para aumentar
+          ventas y eficiencia.
+        </p>
+        <div class="hero-actions">
+          <a href="/contacto" class="btn-primary" data-cursor-expand
+            >Empezar proyecto</a
+          >
+          <a href="#proyectos" class="btn-ghost" data-cursor-expand
+            >Ver trabajo ↓</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" id="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ─── MARQUEE ───────────────────────────── -->
+  <div class="marquee-wrapper" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>Diseño Web</span><span class="dot">·</span>
+        <span>Automatización</span><span class="dot">·</span>
+        <span>SEO Estratégico</span><span class="dot">·</span>
+        <span>Integración WhatsApp</span><span class="dot">·</span>
+        <span>CRM & Leads</span><span class="dot">·</span>
+        <span>Diseño Web</span><span class="dot">·</span>
+        <span>Automatización</span><span class="dot">·</span>
+        <span>SEO Estratégico</span><span class="dot">·</span>
+        <span>Integración WhatsApp</span><span class="dot">·</span>
+        <span>CRM & Leads</span><span class="dot">·</span>
+        <span>Diseño Web</span><span class="dot">·</span>
+        <span>Automatización</span><span class="dot">·</span>
+        <span>SEO Estratégico</span><span class="dot">·</span>
+        <span>Integración WhatsApp</span><span class="dot">·</span>
+        <span>CRM & Leads</span><span class="dot">·</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STATEMENT ─────────────────────────── -->
+  <section class="statement">
+    <div class="container">
+      <p class="statement-label reveal">Nuestra misión</p>
+      <h2 class="statement-text">
+        <span class="reveal-word">Existimos para hacer</span>
+        <span class="reveal-word italic yellow">posible el crecimiento.</span>
+        <span class="reveal-word">Nuevas presencias.</span>
+        <span class="reveal-word italic">Nuevos sistemas.</span>
+        <span class="reveal-word">Nuevos resultados.</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- ─── PILARES (teaser) ───────────────────── -->
+  <section class="pillars-teaser">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Nuestros pilares</p>
+        <a href="/scalio#pilares" class="section-link">Ver todo →</a>
+      </div>
+      <div class="pillars-row">
+        <div class="pillar reveal">
+          <span class="pillar-num">01</span>
+          <h3>Crecimiento</h3>
+          <p>Diseñamos para escalar, no solo para verse bien.</p>
+        </div>
+        <div class="pillar-divider"></div>
+        <div class="pillar reveal">
+          <span class="pillar-num">02</span>
+          <h3>Innovación</h3>
+          <p>Tecnología y estrategia en sincronía constante.</p>
+        </div>
+        <div class="pillar-divider"></div>
+        <div class="pillar reveal">
+          <span class="pillar-num">03</span>
+          <h3>Confianza</h3>
+          <p>Transparencia total en cada etapa del proyecto.</p>
+        </div>
+        <div class="pillar-divider"></div>
+        <div class="pillar reveal">
+          <span class="pillar-num">04</span>
+          <h3>Automatización</h3>
+          <p>Procesos inteligentes que trabajan por ti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROYECTOS ─────────────────────────── -->
+  <section id="proyectos" class="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Trabajo seleccionado</p>
+        <p class="section-subtitle">Proyectos que generan resultados reales</p>
+      </div>
+
+      <div class="projects-list">
+        <article class="project-item reveal" data-cursor-expand>
+          <a href="/scalio#proyectos" class="project-link">
+            <div class="project-media">
+              <div class="project-thumb thumb-1">
+                <div class="project-thumb-inner"></div>
+              </div>
+            </div>
+            <div class="project-meta">
+              <h3 class="project-title">E-Commerce de Moda</h3>
+              <div class="project-tags">
+                <span>Diseño Web</span>
+                <span>Automatización</span>
+                <span>E-Commerce</span>
+              </div>
+              <p class="project-arrow">→</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-item reveal" data-cursor-expand>
+          <a href="/scalio#proyectos" class="project-link">
+            <div class="project-media">
+              <div class="project-thumb thumb-2">
+                <div class="project-thumb-inner"></div>
+              </div>
+            </div>
+            <div class="project-meta">
+              <h3 class="project-title">Consultoría Empresarial</h3>
+              <div class="project-tags">
+                <span>Estrategia Digital</span>
+                <span>Leads</span>
+                <span>SEO</span>
+              </div>
+              <p class="project-arrow">→</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-item reveal" data-cursor-expand>
+          <a href="/scalio#proyectos" class="project-link">
+            <div class="project-media">
+              <div class="project-thumb thumb-3">
+                <div class="project-thumb-inner"></div>
+              </div>
+            </div>
+            <div class="project-meta">
+              <h3 class="project-title">Servicio de Reparación</h3>
+              <div class="project-tags">
+                <span>Automatización</span>
+                <span>WhatsApp</span>
+                <span>CRM</span>
+              </div>
+              <p class="project-arrow">→</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIOS ───────────────────────── -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Clientes que confiaron en Scalio</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <blockquote class="testi reveal">
+          <p>
+            "Scalio transformó completamente nuestra presencia digital. Los
+            resultados fueron inmediatos — más tráfico, más clientes, más
+            ventas."
+          </p>
+          <footer>
+            <strong>Carlos García</strong>
+            <span>Gerente General · Retail Store</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testi reveal">
+          <p>
+            "La automatización que implementaron nos ahorró horas de trabajo
+            cada semana. El ROI fue inmediato."
+          </p>
+          <footer>
+            <strong>María López</strong>
+            <span>Fundadora · Consultora de Marketing</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testi reveal">
+          <p>
+            "No solo crearon una web bonita, sino una herramienta que realmente
+            convierte visitantes en clientes."
+          </p>
+          <footer>
+            <strong>Juan Martínez</strong>
+            <span>Emprendedor · E-Commerce</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ─── Hero ─────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 8rem 0 4rem;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: blobFloat 8s ease-in-out infinite alternate;
+  }
+
+  .blob-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      rgba(250, 204, 21, 0.18) 0%,
+      transparent 70%
+    );
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+  }
+
+  .blob-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+      circle,
+      rgba(250, 204, 21, 0.08) 0%,
+      transparent 70%
+    );
+    bottom: 0;
+    right: 0;
+    animation-delay: -3s;
+  }
+
+  .blob-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(250, 204, 21, 0.12) 0%,
+      transparent 70%
+    );
+    top: 40%;
+    left: 50%;
+    animation-delay: -6s;
+  }
+
+  @keyframes blobFloat {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(40px, 30px) scale(1.1);
+    }
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 2rem;
+    opacity: 0;
+  }
+
+  .tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--yellow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.3);
+    }
+  }
+
+  .hero-headline {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    overflow: hidden;
+  }
+
+  .hero-headline .line {
+    display: block;
+    overflow: hidden;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  .hero-headline .italic {
+    font-style: italic;
+    color: var(--yellow);
+    padding-left: 0.5rem;
+  }
+
+  .hero-sub {
+    max-width: 540px;
+    opacity: 0;
+  }
+
+  .hero-sub p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2.25rem;
+    background: var(--yellow);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    padding: 0.9rem 2.25rem;
+    border: 1px solid var(--border);
+    color: var(--white-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--yellow);
+    color: var(--yellow);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--yellow), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0% {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    50% {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+    51% {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+    100% {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+  }
+
+  .scroll-indicator span {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+  }
+
+  /* ─── Marquee ─────────────────────────── */
+  .marquee-wrapper {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    padding: 1.25rem 0;
+    background: var(--dark-2);
+  }
+
+  .marquee-inner {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  .marquee-inner span {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+  }
+
+  .marquee-inner .dot {
+    color: var(--yellow);
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ─── Statement ──────────────────────── */
+  .statement {
+    padding: 8rem 0;
+  }
+
+  .statement-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 2rem;
+  }
+
+  .statement-text {
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    line-height: 1.15;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+    max-width: 900px;
+  }
+
+  .reveal-word {
+    display: block;
+    overflow: hidden;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+  .yellow {
+    color: var(--yellow);
+  }
+
+  /* ─── Pillars Teaser ─────────────────── */
+  .pillars-teaser {
+    padding: 4rem 0 8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    color: var(--white-muted);
+  }
+
+  .section-link {
+    font-size: 0.8rem;
+    color: var(--yellow);
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s;
+  }
+
+  .section-link:hover {
+    opacity: 0.7;
+  }
+
+  .pillars-row {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .pillar {
+    flex: 1;
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+  }
+
+  .pillar:hover {
+    background: rgba(250, 204, 21, 0.04);
+  }
+
+  .pillar-divider {
+    width: 1px;
+    background: var(--border);
+    align-self: stretch;
+  }
+
+  .pillar-num {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--yellow);
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--white);
+  }
+
+  .pillar p {
+    font-size: 0.875rem;
+    color: var(--white-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── Projects ───────────────────────── */
+  .projects {
+    padding: 4rem 0 8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-link {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+    transition: gap 0.4s ease;
+  }
+
+  .project-link:hover {
+    gap: 3.5rem;
+  }
+
+  .project-media {
+    flex-shrink: 0;
+  }
+
+  .project-thumb {
+    width: 100px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+  }
+
+  .project-link:hover .project-thumb {
+    transform: scale(1.05);
+  }
+
+  .thumb-1 {
+    background: linear-gradient(135deg, #facc15, #f59e0b);
+  }
+  .thumb-2 {
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+  }
+  .thumb-3 {
+    background: linear-gradient(135deg, #fcd34d, #ca8a04);
+  }
+
+  .project-thumb-inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-meta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    min-width: 250px;
+    font-style: normal;
+    letter-spacing: -0.02em;
+  }
+
+  .project-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .project-tags span {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    transition: all 0.3s;
+  }
+
+  .project-link:hover .project-tags span {
+    border-color: rgba(250, 204, 21, 0.3);
+    color: var(--yellow);
+  }
+
+  .project-arrow {
+    font-size: 1.5rem;
+    color: var(--white-muted);
+    margin-left: auto;
+    transition: all 0.3s ease;
+    transform: translateX(0);
+  }
+
+  .project-link:hover .project-arrow {
+    color: var(--yellow);
+    transform: translateX(8px);
+  }
+
+  /* ─── Testimonials ───────────────────── */
+  .testimonials {
+    padding: 4rem 0 8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .testi {
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    background: var(--dark-2);
+    transition: background 0.3s;
+  }
+
+  .testi:hover {
+    background: rgba(250, 204, 21, 0.04);
+  }
+
+  .testi p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--white-muted);
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .testi footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .testi footer strong {
+    font-size: 0.9rem;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .testi footer span {
+    font-size: 0.75rem;
+    color: var(--white-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── Responsive ─────────────────────── */
+  @media (max-width: 900px) {
+    .pillars-row {
+      flex-direction: column;
+    }
+    .pillar-divider {
+      width: 100%;
+      height: 1px;
+    }
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .project-link {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .project-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .project-title {
+      min-width: unset;
+    }
+    .project-arrow {
+      margin-left: 0;
+    }
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap === "undefined") return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ── Hero entrance ──────────────────────
+    const tl = gsap.timeline({ delay: 0.3 });
+
+    tl.to(".hero-tag", {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: "expo.out",
+    })
+      .to(
+        "#line1",
+        {
+          y: "0%",
+          opacity: 1,
+          duration: 1,
+          ease: "expo.out",
+        },
+        "-=0.3",
+      )
+      .to(
+        "#line2",
+        {
+          y: "0%",
+          opacity: 1,
+          duration: 1,
+          ease: "expo.out",
+        },
+        "-=0.75",
+      )
+      .to(
+        "#hero-sub",
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "expo.out",
+        },
+        "-=0.5",
+      )
+      .to(
+        "#scroll-indicator",
+        {
+          opacity: 1,
+          duration: 0.5,
+        },
+        "-=0.2",
+      );
+
+    // ── Statement word reveal ───────────────
+    gsap.utils.toArray(".reveal-word").forEach((word, i) => {
+      gsap.from(word, {
+        scrollTrigger: {
+          trigger: word,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.7,
+        delay: i * 0.08,
+        ease: "expo.out",
+      });
+    });
+
+    // ── Generic reveal ──────────────────────
+    gsap.utils.toArray(".reveal").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: "expo.out",
+      });
+    });
+
+    // ── Project items stagger ───────────────
+    gsap.utils.toArray(".project-item").forEach((item, i) => {
+      gsap.from(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        x: -30,
+        duration: 0.7,
+        delay: i * 0.1,
+        ease: "expo.out",
+      });
+    });
+
+    // ── Testimonials stagger ───────────────
+    gsap.utils.toArray(".testi").forEach((t, i) => {
+      gsap.from(t, {
+        scrollTrigger: {
+          trigger: t,
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        delay: i * 0.12,
+        ease: "expo.out",
+      });
+    });
+
+    // ── Horizontal scroll on pillars (desktop) ──
+    const pillarsRow = document.querySelector(".pillars-row");
+    if (pillarsRow && window.innerWidth > 900) {
+      gsap.from(".pillar", {
+        scrollTrigger: {
+          trigger: ".pillars-row",
+          start: "top 85%",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: "expo.out",
+      });
+    }
+  });
+</script>

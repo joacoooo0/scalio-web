@@ -1,0 +1,237 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Scalio — Páginas web estratégicas y automatización para negocios que quieren crecer.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <!-- Google Fonts: Coloca aquí tu fuente manualmente -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=TU_FUENTE" rel="stylesheet" /> -->
+
+    <!-- GSAP CDN -->
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    ></script>
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
+    ></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* ─── CSS Variables ─────────────────────────── */
+  :root {
+    --yellow: #facc15;
+    --yellow-dim: #ca9e00;
+    --dark: #0a0a0a;
+    --dark-2: #111111;
+    --dark-3: #1a1a1a;
+    --white: #ffffff;
+    --white-muted: rgba(255, 255, 255, 0.6);
+    --white-dim: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(10, 10, 10, 0.6);
+    --glass-border: rgba(250, 204, 21, 0.15);
+
+    /* Fuente: reemplaza con tu Google Font */
+    --font-sans: "Helvetica Neue", Arial, sans-serif;
+    --font-display: "Georgia", serif;
+  }
+
+  /* ─── Reset & Base ──────────────────────────── */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--dark);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--white);
+    background-color: var(--dark);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ─── Scrollbar ─────────────────────────────── */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: 2px;
+  }
+
+  /* ─── Selection ─────────────────────────────── */
+  ::selection {
+    background: var(--yellow);
+    color: var(--dark);
+  }
+
+  /* ─── Typography ─────────────────────────────── */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+  }
+  h2 {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+  }
+  h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  }
+  p {
+    line-height: 1.7;
+    color: var(--white-muted);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* ─── Page Transition Overlay ─────────────────── */
+  #page-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--yellow);
+    z-index: 9999;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    pointer-events: none;
+  }
+
+  /* ─── Cursor ─────────────────────────────────── */
+  .cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: var(--yellow);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9000;
+    transform: translate(-50%, -50%);
+    transition:
+      transform 0.1s ease,
+      width 0.3s ease,
+      height 0.3s ease,
+      opacity 0.3s;
+    mix-blend-mode: difference;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(250, 204, 21, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 8999;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease;
+  }
+
+  /* ─── Glass ──────────────────────────────────── */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* ─── Utilities ──────────────────────────────── */
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1.25rem;
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  /* ─── Reveal Animations ──────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  .split-char {
+    display: inline-block;
+    overflow: hidden;
+  }
+</style>

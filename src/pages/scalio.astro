@@ -1,0 +1,846 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import TransitionOverlay from "../components/TransitionOverlay.astro";
+---
+
+<Layout
+  title="Scalio — Quiénes somos"
+  description="Conoce Scalio: nuestra historia, pilares, cómo trabajamos y los proyectos que hemos desarrollado."
+>
+  <TransitionOverlay />
+  <Nav currentPage="/scalio" />
+
+  <!-- ─── PAGE HERO ──────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-label" id="label-in">Sobre nosotros</p>
+      <h1 class="page-title" id="title-in">
+        Construimos el<br />
+        <em>futuro digital</em><br />
+        de tu negocio.
+      </h1>
+    </div>
+    <div class="hero-line" id="hero-line"></div>
+  </section>
+
+  <!-- ─── POR QUÉ ───────────────────────── -->
+  <section class="why-section" id="porque">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-left">
+          <p class="section-label reveal">Por qué Scalio</p>
+          <h2 class="why-headline reveal">
+            Cada negocio merece <em>crecer</em>.
+          </h2>
+        </div>
+        <div class="why-right">
+          <p class="reveal">
+            En Scalio nacimos de una convicción simple: demasiados negocios
+            increíbles no tienen la presencia digital que merecen. Eso nos hace
+            perder oportunidades, tiempo y dinero.
+          </p>
+          <p class="reveal">
+            Creamos soluciones estratégicas — no solo sitios bonitos. Cada
+            proyecto está diseñado para generar resultados: más clientes, más
+            eficiencia, más crecimiento.
+          </p>
+          <div class="why-stats reveal">
+            <div class="stat">
+              <span class="stat-num" data-count="30">0</span><span>+</span>
+              <p>Proyectos lanzados</p>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="95">0</span><span>%</span>
+              <p>Clientes satisfechos</p>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="3">0</span><span>x</span>
+              <p>Retorno promedio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PILARES ───────────────────────── -->
+  <section id="pilares" class="pillars-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">Pilares</p>
+        <h2 class="section-title">
+          Los valores que<br /><em>guían todo</em> lo que hacemos.
+        </h2>
+      </div>
+
+      <div class="pillars-big">
+        <div class="pillar-big reveal">
+          <div class="pillar-big-header">
+            <span class="pillar-big-num">01</span>
+            <h3>Crecimiento</h3>
+          </div>
+          <p>
+            No diseñamos para impresionar, diseñamos para que tu negocio crezca.
+            Cada decisión estratégica apunta al mismo objetivo: más
+            oportunidades reales para ti.
+          </p>
+        </div>
+
+        <div class="pillar-big reveal">
+          <div class="pillar-big-header">
+            <span class="pillar-big-num">02</span>
+            <h3>Innovación</h3>
+          </div>
+          <p>
+            Usamos las últimas tecnologías y estrategias para mantenerte siempre
+            adelante. No seguimos tendencias — las anticipamos para que tú te
+            beneficies primero.
+          </p>
+        </div>
+
+        <div class="pillar-big reveal">
+          <div class="pillar-big-header">
+            <span class="pillar-big-num">03</span>
+            <h3>Confianza</h3>
+          </div>
+          <p>
+            Transparencia total en cada etapa. Sabes exactamente qué estamos
+            construyendo, por qué y cuándo lo recibirás. Sin sorpresas, sin
+            promesas vacías.
+          </p>
+        </div>
+
+        <div class="pillar-big reveal">
+          <div class="pillar-big-header">
+            <span class="pillar-big-num">04</span>
+            <h3>Automatización</h3>
+          </div>
+          <p>
+            Simplificamos procesos complejos para que puedas enfocarte en lo que
+            realmente importa: hacer crecer tu negocio. La tecnología trabaja,
+            tú decides.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CÓMO TRABAJAMOS ───────────────── -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">Proceso</p>
+        <h2 class="section-title">Cómo <em>trabajamos</em> contigo.</h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-num-wrap">
+            <span class="step-num">01</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Descubrimiento</h3>
+            <p>
+              Entendemos tu negocio, objetivos, audiencia y desafíos actuales.
+              Sin este paso, no hay estrategia real.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-num-wrap">
+            <span class="step-num">02</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Estrategia</h3>
+            <p>
+              Diseñamos una solución personalizada con objetivos claros,
+              métricas definidas y alcance acordado.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-num-wrap">
+            <span class="step-num">03</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Desarrollo</h3>
+            <p>
+              Construimos con máxima calidad y atención al detalle. Comunicación
+              constante, sin sorpresas.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-num-wrap">
+            <span class="step-num">04</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Lanzamiento</h3>
+            <p>
+              Entregamos, probamos y optimizamos. El 50% inicial y 50% contra
+              entrega te da tranquilidad total.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-num-wrap">
+            <span class="step-num">05</span>
+          </div>
+          <div class="step-content">
+            <h3>Soporte</h3>
+            <p>
+              El lanzamiento es el comienzo. Seguimos aquí para ajustes, mejoras
+              y crecimiento continuo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROYECTOS ─────────────────────── -->
+  <section id="proyectos" class="projects-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">Proyectos</p>
+        <h2 class="section-title">
+          Trabajo que<br /><em>habla por sí solo.</em>
+        </h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="proj-card reveal">
+          <div class="proj-thumb t1"></div>
+          <div class="proj-info">
+            <div class="proj-top">
+              <h3>E-Commerce de Moda</h3>
+              <span class="proj-year">2024</span>
+            </div>
+            <p>
+              Tienda online completa con integración de pago, automatización de
+              inventario y botón WhatsApp.
+            </p>
+            <div class="proj-tags">
+              <span>Diseño Web</span>
+              <span>Automatización</span>
+              <span>E-Commerce</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-thumb t2"></div>
+          <div class="proj-info">
+            <div class="proj-top">
+              <h3>Consultoría Empresarial</h3>
+              <span class="proj-year">2024</span>
+            </div>
+            <p>
+              Sitio web estratégico con formularios automatizados, captura de
+              leads y seguimiento inteligente.
+            </p>
+            <div class="proj-tags">
+              <span>Estrategia Digital</span>
+              <span>Leads</span>
+              <span>SEO</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-thumb t3"></div>
+          <div class="proj-info">
+            <div class="proj-top">
+              <h3>Servicio de Reparación</h3>
+              <span class="proj-year">2024</span>
+            </div>
+            <p>
+              Landing page con sistema de citas automatizado, seguimiento de
+              clientes y CRM integrado.
+            </p>
+            <div class="proj-tags">
+              <span>Automatización</span>
+              <span>WhatsApp</span>
+              <span>CRM</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICIOS ─────────────────────── -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label">Servicios</p>
+        <h2 class="section-title">Lo que hacemos<br /><em>muy bien.</em></h2>
+      </div>
+
+      <div class="services-list">
+        <div class="service-item reveal">
+          <h3>Diseño Web Estratégico</h3>
+          <p>
+            Landing pages y sitios completos. Responsive, rápidos y optimizados
+            para conversión desde el primer día.
+          </p>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-item reveal">
+          <h3>Automatización de Procesos</h3>
+          <p>
+            Respuestas automáticas, captura de leads, integración con Google
+            Sheets, CRM y herramientas que ya usas.
+          </p>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-item reveal">
+          <h3>SEO & Visibilidad</h3>
+          <p>
+            Optimización técnica y estratégica para aparecer donde tus clientes
+            buscan. Resultados medibles.
+          </p>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-item reveal">
+          <h3>Integración WhatsApp</h3>
+          <p>
+            Botones directos, flujos de conversación automatizados y captura de
+            datos sin fricción.
+          </p>
+          <span class="service-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ─── Page Hero ──────────────────────── */
+  .page-hero {
+    padding: 12rem 0 6rem;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+  }
+
+  .page-title {
+    opacity: 0;
+  }
+
+  .page-title em {
+    font-style: italic;
+    color: var(--yellow);
+  }
+
+  .hero-line {
+    height: 1px;
+    background: linear-gradient(to right, var(--yellow), transparent);
+    margin-top: 4rem;
+    width: 0;
+  }
+
+  /* ─── Why ────────────────────────────── */
+  .why-section {
+    padding: 8rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .why-headline {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+  }
+
+  .why-headline em {
+    font-style: italic;
+    color: var(--yellow);
+  }
+
+  .why-right p {
+    font-size: 1.05rem;
+    color: var(--white-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .why-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .stat > div,
+  .stat > span:first-child {
+    display: inline-flex;
+    align-items: baseline;
+  }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--yellow);
+    line-height: 1;
+  }
+
+  .stat > span:last-of-type {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--yellow);
+  }
+
+  .stat p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--white-muted);
+  }
+
+  /* ─── Pillars ─────────────────────────── */
+  .pillars-section {
+    padding: 8rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-head {
+    margin-bottom: 5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin-top: 1rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--yellow);
+  }
+
+  .pillars-big {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .pillar-big {
+    padding: 3rem;
+    border: 1px solid var(--border);
+    background: var(--dark-2);
+    transition: background 0.3s ease;
+  }
+
+  .pillar-big:hover {
+    background: rgba(250, 204, 21, 0.04);
+  }
+
+  .pillar-big-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar-big-num {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--yellow);
+  }
+
+  .pillar-big h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    font-family: var(--font-display);
+  }
+
+  .pillar-big p {
+    font-size: 0.95rem;
+    color: var(--white-muted);
+    line-height: 1.8;
+  }
+
+  /* ─── Process ────────────────────────── */
+  .process-section {
+    padding: 8rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .step-num-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .step-num {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--yellow);
+  }
+
+  .step-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--yellow), transparent);
+  }
+
+  .step-content h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .step-content p {
+    font-size: 0.95rem;
+    color: var(--white-muted);
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  /* ─── Projects Grid ──────────────────── */
+  .projects-section {
+    padding: 8rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .proj-card {
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    border-radius: 12px;
+    transition:
+      transform 0.4s ease,
+      border-color 0.3s;
+  }
+
+  .proj-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(250, 204, 21, 0.3);
+  }
+
+  .proj-thumb {
+    height: 200px;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .proj-card:hover .proj-thumb {
+    transform: scale(1.03);
+  }
+
+  .t1 {
+    background: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
+  }
+  .t2 {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  }
+  .t3 {
+    background: linear-gradient(135deg, #fcd34d 0%, #ca8a04 100%);
+  }
+
+  .proj-info {
+    padding: 1.75rem;
+  }
+
+  .proj-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  .proj-top h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .proj-year {
+    font-size: 0.75rem;
+    color: var(--white-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .proj-info p {
+    font-size: 0.875rem;
+    color: var(--white-muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .proj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .proj-tags span {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--white-muted);
+    transition: all 0.3s;
+  }
+
+  .proj-card:hover .proj-tags span {
+    border-color: rgba(250, 204, 21, 0.3);
+    color: var(--yellow);
+  }
+
+  /* ─── Services ───────────────────────── */
+  .services-section {
+    padding: 8rem 0;
+  }
+
+  .services-list {
+    margin-top: 3rem;
+  }
+
+  .service-item {
+    display: grid;
+    grid-template-columns: 280px 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .service-item:hover {
+    padding-left: 1rem;
+  }
+
+  .service-item h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .service-item p {
+    font-size: 0.9rem;
+    color: var(--white-muted);
+    line-height: 1.6;
+  }
+
+  .service-arrow {
+    font-size: 1.3rem;
+    color: var(--white-muted);
+    transition: all 0.3s ease;
+  }
+
+  .service-item:hover .service-arrow {
+    color: var(--yellow);
+    transform: translateX(6px);
+  }
+
+  /* ─── Responsive ─────────────────────── */
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .service-item {
+      grid-template-columns: 1fr auto;
+    }
+    .service-item h3 {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .pillars-big {
+      grid-template-columns: 1fr;
+    }
+    .process-step {
+      grid-template-columns: 80px 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    .why-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .service-item {
+      grid-template-columns: 1fr;
+    }
+    .service-item:hover {
+      padding-left: 0;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ── Page hero entrance ────────────────
+    const tl = gsap.timeline({ delay: 0.2 });
+    tl.to(".page-label", { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" })
+      .to(
+        ".page-title",
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "expo.out",
+        },
+        "-=0.3",
+      )
+      .to(
+        ".hero-line",
+        {
+          width: "100%",
+          duration: 1.2,
+          ease: "expo.inOut",
+        },
+        "-=0.5",
+      );
+
+    // ── Scroll reveals ────────────────────
+    gsap.utils.toArray(".reveal").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: "expo.out",
+      });
+    });
+
+    // ── Animated counters ─────────────────
+    document.querySelectorAll(".stat-num").forEach((el) => {
+      const target = parseInt(el.dataset.count || "0");
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 85%",
+        once: true,
+        onEnter: () => {
+          gsap.to(
+            { val: 0 },
+            {
+              val: target,
+              duration: 1.5,
+              ease: "power2.out",
+              onUpdate: function () {
+                el.textContent = Math.round(this.targets()[0].val).toString();
+              },
+            },
+          );
+        },
+      });
+    });
+
+    // ── Process steps stagger ─────────────
+    gsap.utils.toArray(".process-step").forEach((step, i) => {
+      gsap.from(step, {
+        scrollTrigger: {
+          trigger: step,
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        x: -40,
+        duration: 0.7,
+        delay: i * 0.08,
+        ease: "expo.out",
+      });
+    });
+
+    // ── Projects grid stagger ─────────────
+    gsap.utils.toArray(".proj-card").forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.7,
+        delay: i * 0.12,
+        ease: "expo.out",
+      });
+    });
+  });
+</script>
