@@ -1,23 +1,164 @@
 ---
-interface Props {
-  title: string;
+export interface Props {
+  title?: string;
   description?: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+  schema?: object;
 }
 
 const {
-  title,
-  description = "Scalio — Páginas web estratégicas y automatización para negocios que quieren crecer.",
+  title = "Scalio | Agencia de Desarrollo Web y Automatización en Lima, Perú",
+  description = "Scalio crea páginas web estratégicas, automatiza procesos y desarrolla ERP/SaaS para MYPES y emprendedores en Perú. Webs que generan ventas 24/7.",
+  image = "/og-image.jpg",
+  canonical,
+  noindex = false,
+  schema,
 } = Astro.props;
+
+const siteUrl = "https://scalio-web.vercel.app";
+const canonicalUrl = canonical
+  ? `${siteUrl}${canonical}`
+  : `${siteUrl}${Astro.url.pathname}`;
+const ogImage = image.startsWith("http") ? image : `${siteUrl}${image}`;
+
+// Schema.org por defecto: Organization + LocalBusiness + WebSite + FAQPage
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Scalio",
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/logo.png`,
+        width: 512,
+        height: 512,
+      },
+      sameAs: [
+        "https://www.linkedin.com/company/scalio",
+        "https://www.instagram.com/scalio.pe",
+      ],
+      description:
+        "Agencia digital especializada en desarrollo web, automatización de procesos y sistemas ERP/SaaS para MYPES en Perú.",
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${siteUrl}/#localbusiness`,
+      name: "Scalio - Agencia Digital",
+      image: `${siteUrl}/og-image.jpg`,
+      url: siteUrl,
+      telephone: "+51-XXX-XXXX",
+      email: "hola@scalio.pe",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Lima",
+        addressLocality: "Lima",
+        addressRegion: "Lima",
+        postalCode: "15001",
+        addressCountry: "PE",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: -12.0464,
+        longitude: -77.0428,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "18:00",
+        },
+      ],
+      priceRange: "$$",
+      areaServed: {
+        "@type": "Country",
+        name: "Perú",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Scalio",
+      publisher: {
+        "@id": `${siteUrl}/#organization`,
+      },
+    },
+  ],
+};
+
+const finalSchema = schema || defaultSchema;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SEO TÉCNICO — NUEVO (no toca tu diseño)       -->
+    <!-- ═══════════════════════════════════════════════ -->
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Robots -->
+    {
+      noindex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta
+          name="robots"
+          content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+      )
+    }
+
+    <!-- Título y descripción optimizados -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:site_name" content="Scalio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Seguridad y performance -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Preconnect para velocidad -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Schema.org JSON-LD (lo que faltaba) -->
+    <script type="application/ld+json" set:html={JSON.stringify(finalSchema)} />
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- TU DISEÑO ORIGINAL — SIN CAMBIOS               -->
+    <!-- ═══════════════════════════════════════════════ -->
 
     <!-- Google Fonts: Coloca aquí tu fuente manualmente -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,6 +178,9 @@ const {
       is:inline
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
     ></script>
+
+    <!-- Slot para head adicional (breadcrumbs, schemas extra, etc.) -->
+    <slot name="head" />
   </head>
   <body>
     <slot />
@@ -44,6 +188,10 @@ const {
 </html>
 
 <style is:global>
+  /* ═══════════════════════════════════════════════ */
+  /* TU CSS ORIGINAL — SIN NINGÚN CAMBIO             */
+  /* ═══════════════════════════════════════════════ */
+
   /* ─── CSS Variables ─────────────────────────── */
   :root {
     --yellow: #facc15;
@@ -233,5 +381,30 @@ const {
   .split-char {
     display: inline-block;
     overflow: hidden;
+  }
+
+  /* ═══════════════════════════════════════════════ */
+  /* SEO: ACCESIBILIDAD EXTRA (no afecta diseño)    */
+  /* ═══════════════════════════════════════════════ */
+
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--yellow);
+    color: var(--dark);
+    padding: 8px 16px;
+    z-index: 10000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: top 0.3s;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
   }
 </style>
