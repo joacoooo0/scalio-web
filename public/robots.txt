@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /gracias
+Disallow: /404
+Disallow: /buscar?q=
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://scalio-web.vercel.app/sitemap-index.xml
+
+# Host
+Host: https://scalio-web.vercel.app
