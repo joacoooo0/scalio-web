@@ -8,7 +8,7 @@ const { currentPage = "/" } = Astro.props;
 <nav id="nav" class="glass">
   <div class="nav-inner">
     <a href="/" class="nav-logo" data-cursor-expand>
-      Scal<em>io</em>
+      <img src="/scalio-logo.webp" alt="Scalio" class="nav-logo-scalio" />
     </a>
 
     <div class="nav-links">
@@ -71,6 +71,11 @@ const { currentPage = "/" } = Astro.props;
     justify-content: space-between;
     padding: 0.85rem 1.5rem;
     gap: 1rem;
+  }
+
+  .nav-logo-scalio {
+    height: 30px;
+    width: auto;
   }
 
   .nav-logo {
