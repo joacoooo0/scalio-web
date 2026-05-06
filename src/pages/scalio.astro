@@ -136,7 +136,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
       </div>
 
       <div class="process-steps">
-        <div class="process-step reveal">
+        <div class="process-step">
           <div class="step-num-wrap">
             <span class="step-num">01</span>
             <div class="step-line"></div>
@@ -150,7 +150,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </div>
         </div>
 
-        <div class="process-step reveal">
+        <div class="process-step">
           <div class="step-num-wrap">
             <span class="step-num">02</span>
             <div class="step-line"></div>
@@ -164,7 +164,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </div>
         </div>
 
-        <div class="process-step reveal">
+        <div class="process-step">
           <div class="step-num-wrap">
             <span class="step-num">03</span>
             <div class="step-line"></div>
@@ -178,7 +178,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </div>
         </div>
 
-        <div class="process-step reveal">
+        <div class="process-step">
           <div class="step-num-wrap">
             <span class="step-num">04</span>
             <div class="step-line"></div>
@@ -192,7 +192,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </div>
         </div>
 
-        <div class="process-step reveal">
+        <div class="process-step">
           <div class="step-num-wrap">
             <span class="step-num">05</span>
           </div>
@@ -219,7 +219,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
       </div>
 
       <div class="projects-grid">
-        <article class="proj-card reveal">
+        <article class="proj-card">
           <div class="proj-thumb t1"></div>
           <div class="proj-info">
             <div class="proj-top">
@@ -238,7 +238,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </div>
         </article>
 
-        <article class="proj-card reveal">
+        <article class="proj-card">
           <div class="proj-thumb t2"></div>
           <div class="proj-info">
             <div class="proj-top">
@@ -257,7 +257,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </div>
         </article>
 
-        <article class="proj-card reveal">
+        <article class="proj-card">
           <div class="proj-thumb t3"></div>
           <div class="proj-info">
             <div class="proj-top">
@@ -779,7 +779,8 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
         scrollTrigger: {
           trigger: el,
           start: "top 88%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
+          once: true,
         },
         opacity: 0,
         y: 40,
@@ -811,36 +812,43 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
       });
     });
 
-    // ── Process steps stagger ─────────────
-    gsap.utils.toArray(".process-step").forEach((step, i) => {
-      gsap.from(step, {
+    // ── Process steps stagger (container-based) ─────────────
+    // Steps are vertical in scalio.astro so individual triggers work fine,
+    // but we use container trigger + stagger for consistency and to avoid
+    // double-animation with the generic .reveal handler.
+    const processSteps = document.querySelector(".process-steps");
+    if (processSteps) {
+      gsap.from(".process-step", {
         scrollTrigger: {
-          trigger: step,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
+          trigger: processSteps,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
         },
         opacity: 0,
         x: -40,
         duration: 0.7,
-        delay: i * 0.08,
+        stagger: 0.1,
         ease: "expo.out",
       });
-    });
+    }
 
-    // ── Projects grid stagger ─────────────
-    gsap.utils.toArray(".proj-card").forEach((card, i) => {
-      gsap.from(card, {
+    // ── Projects grid stagger (container-based) ─────────────
+    const projectsGrid = document.querySelector(".projects-grid");
+    if (projectsGrid) {
+      gsap.from(".proj-card", {
         scrollTrigger: {
-          trigger: card,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
+          trigger: projectsGrid,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
         },
         opacity: 0,
         y: 50,
         duration: 0.7,
-        delay: i * 0.12,
+        stagger: 0.12,
         ease: "expo.out",
       });
-    });
+    }
   });
 </script>

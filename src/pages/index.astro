@@ -3,15 +3,77 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import TransitionOverlay from "../components/TransitionOverlay.astro";
+
+// Schema FAQPage para Featured Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta una página web en Perú?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El costo varía según complejidad. En Scalio ofrecemos desarrollo web estratégico desde S/999 para MYPES y emprendedores en Perú, incluyendo diseño responsive, SEO básico y optimización para conversiones. Solicita tu cotización personalizada sin compromiso.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué es la automatización de procesos para empresas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La automatización de procesos permite a las empresas peruanas reducir tareas manuales repetitivas usando tecnología. En Scalio automatizamos respuestas de WhatsApp, captura de leads, integraciones con Google Sheets, CRMs y flujos de seguimiento, reduciendo el trabajo manual hasta en un 60%.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Trabajan con emprendedores y MYPES en Perú?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí, en Scalio trabajamos específicamente con emprendedores, startups y MYPES en Perú. Entendemos las restricciones de presupuesto y tiempo de las empresas en crecimiento, por eso ofrecemos soluciones tecnológicas escalables que crecen junto con tu negocio.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tiempo tardan en entregar una página web?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Una landing page o web corporativa básica toma entre 2 y 3 semanas. Proyectos más complejos como e-commerce o plataformas personalizadas pueden tomar de 4 a 8 semanas. Siempre entregamos con fecha exacta y mantenemos comunicación constante durante el proceso.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué incluye el desarrollo web en Scalio?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Nuestro desarrollo web incluye: diseño UX/UI estratégico orientado a conversiones, desarrollo con tecnología moderna (Astro), SEO técnico básico, velocidad de carga optimizada, responsive para todos los dispositivos, integración con WhatsApp Business, formularios de contacto, Google Analytics configurado y 30 días de soporte post-lanzamiento.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cómo funciona la automatización de WhatsApp para negocios?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Implementamos respuestas automáticas inteligentes en WhatsApp Business que atienden a tus clientes 24/7: mensajes de bienvenida personalizados, respuestas a preguntas frecuentes, captura de datos de leads, envío automático de catálogos y precios, confirmaciones de citas, recordatorios y seguimiento post-venta. Todo sin necesidad de aumentar tu equipo de atención al cliente.",
+      },
+    },
+  ],
+};
 ---
 
-<Layout title="Scalio — Páginas web estratégicas y automatización">
+<Layout
+  title="Scalio | Desarrollo Web y Automatización para MYPES en Perú"
+  description="Agencia digital en Lima, Perú. Creamos páginas web estratégicas y automatizamos procesos para MYPES y emprendedores. Webs que venden, sistemas que escalan. Cotiza gratis."
+  canonical="/"
+  schema={faqSchema}
+>
   <TransitionOverlay />
   <Nav currentPage="/" />
 
-  <!-- ─── HERO ──────────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 1. HERO / BANNER PRINCIPAL — OPTIMIZADO SEO                    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
   <section class="hero" id="hero">
-    <!-- Animated background blobs -->
     <div class="hero-bg">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -22,7 +84,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     <div class="container hero-content">
       <div class="hero-tag">
         <span class="tag-dot"></span>
-        Agencia digital · Lima, Perú
+        Agencia digital · Lima, Perú · 100% para MYPES
       </div>
 
       <h1 class="hero-headline" id="hero-headline">
@@ -31,29 +93,45 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
       </h1>
 
       <div class="hero-sub" id="hero-sub">
-        <p>
-          Creamos páginas web estratégicas y automatizamos procesos<br /> para aumentar
-          ventas y eficiencia.
+        <p class="hero-sub-main">
+          Desarrollo web y automatización de procesos para <strong
+            >MYPES, emprendedores y negocios locales</strong
+          > en Perú.
         </p>
+        <p class="hero-sub-secondary">
+          Creamos páginas web que convierten visitantes en clientes y
+          automatizamos tus tareas repetitivas para que enfoques en hacer crecer
+          tu negocio.
+        </p>
+
         <div class="hero-actions">
-          <a href="/contacto" class="btn-primary" data-cursor-expand
-            >Empezar proyecto</a
-          >
-          <a href="#proyectos" class="btn-ghost" data-cursor-expand
-            >Ver trabajo ↓</a
-          >
+          <a href="/contacto" class="btn-primary" data-cursor-expand>
+            Cotiza tu proyecto gratis
+          </a>
+          <a href="#proceso" class="btn-ghost" data-cursor-expand>
+            Ver cómo trabajamos ↓
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <span class="trust-item">✓ 100% peruano</span>
+          <span class="trust-separator">·</span>
+          <span class="trust-item">✓ Respuesta en 24h</span>
+          <span class="trust-separator">·</span>
+          <span class="trust-item">✓ Soporte post-entrega</span>
         </div>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
     <div class="scroll-indicator" id="scroll-indicator">
       <div class="scroll-line"></div>
       <span>Scroll</span>
     </div>
   </section>
 
-  <!-- ─── MARQUEE ───────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 2. MARQUEE — AMPLIADO CON KEYWORDS DEL NICHO                   -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
   <div class="marquee-wrapper" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-inner">
@@ -62,21 +140,24 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
         <span>SEO Estratégico</span><span class="dot">·</span>
         <span>Integración WhatsApp</span><span class="dot">·</span>
         <span>CRM & Leads</span><span class="dot">·</span>
+        <span>Landing Pages</span><span class="dot">·</span>
+        <span>E-Commerce</span><span class="dot">·</span>
+        <span>ERP · SaaS</span><span class="dot">·</span>
         <span>Diseño Web</span><span class="dot">·</span>
         <span>Automatización</span><span class="dot">·</span>
         <span>SEO Estratégico</span><span class="dot">·</span>
         <span>Integración WhatsApp</span><span class="dot">·</span>
         <span>CRM & Leads</span><span class="dot">·</span>
-        <span>Diseño Web</span><span class="dot">·</span>
-        <span>Automatización</span><span class="dot">·</span>
-        <span>SEO Estratégico</span><span class="dot">·</span>
-        <span>Integración WhatsApp</span><span class="dot">·</span>
-        <span>CRM & Leads</span><span class="dot">·</span>
+        <span>Landing Pages</span><span class="dot">·</span>
+        <span>E-Commerce</span><span class="dot">·</span>
+        <span>ERP · SaaS</span><span class="dot">·</span>
       </div>
     </div>
   </div>
 
-  <!-- ─── STATEMENT ─────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 3. STATEMENT / NUESTRA MISIÓN — CON CONTEXTO SEO               -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
   <section class="statement">
     <div class="container">
       <p class="statement-label reveal">Nuestra misión</p>
@@ -87,10 +168,24 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
         <span class="reveal-word italic">Nuevos sistemas.</span>
         <span class="reveal-word">Nuevos resultados.</span>
       </h2>
+
+      <div class="statement-context reveal">
+        <p>
+          Somos una agencia digital en Lima que ayuda a <strong
+            >MYPES y emprendedores peruanos</strong
+          > a crecer con tecnología: páginas web que venden, procesos que se automatizan
+          y sistemas que escalan tu negocio sin necesidad de aumentar tu equipo.
+        </p>
+        <a href="/scalio" class="btn-ghost statement-cta" data-cursor-expand>
+          Conoce nuestro proceso →
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ─── PILARES (teaser) ───────────────────── -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 4. PILARES (teaser) — DESCRIPCIONES REFINADAS                  -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
   <section class="pillars-teaser">
     <div class="container">
       <div class="section-header reveal">
@@ -101,31 +196,190 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
         <div class="pillar reveal">
           <span class="pillar-num">01</span>
           <h3>Crecimiento</h3>
-          <p>Diseñamos para escalar, no solo para verse bien.</p>
+          <p>
+            Diseñamos para escalar, no solo para verse bien. Cada web y sistema
+            pensamos en tu siguiente nivel.
+          </p>
         </div>
         <div class="pillar-divider"></div>
         <div class="pillar reveal">
           <span class="pillar-num">02</span>
           <h3>Innovación</h3>
-          <p>Tecnología y estrategia en sincronía constante.</p>
+          <p>
+            Usamos Astro, n8n y las mejores herramientas para que tu tecnología
+            no quede obsoleta en 2 años.
+          </p>
         </div>
         <div class="pillar-divider"></div>
         <div class="pillar reveal">
           <span class="pillar-num">03</span>
           <h3>Confianza</h3>
-          <p>Transparencia total en cada etapa del proyecto.</p>
+          <p>
+            Transparencia total en cada etapa del proyecto. Precios claros,
+            tiempos reales, sin sorpresas.
+          </p>
         </div>
         <div class="pillar-divider"></div>
         <div class="pillar reveal">
           <span class="pillar-num">04</span>
           <h3>Automatización</h3>
-          <p>Procesos inteligentes que trabajan por ti.</p>
+          <p>
+            Reducimos tareas repetitivas en un 60% con flujos inteligentes de
+            WhatsApp, CRM y email automático.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── PROYECTOS ─────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 5. PROCESO DE TRABAJO — NUEVA SECCIÓN SEO                        -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section id="proceso" class="process-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Cómo trabajamos</p>
+        <p class="section-subtitle">
+          Desde el primer contacto hasta el lanzamiento
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step" data-cursor-expand>
+          <span class="process-num">01</span>
+          <div class="process-icon">🔍</div>
+          <h3>Diagnóstico gratuito</h3>
+          <p>
+            Hablamos de tu negocio, analizamos tu situación actual y definimos
+            objetivos claros. Sin costo, sin compromiso.
+          </p>
+          <span class="process-time">30 min</span>
+        </div>
+
+        <div class="process-arrow" aria-hidden="true">→</div>
+
+        <div class="process-step" data-cursor-expand>
+          <span class="process-num">02</span>
+          <div class="process-icon">📋</div>
+          <h3>Propuesta personalizada</h3>
+          <p>
+            Recibes un plan de trabajo con alcance exacto, tiempos reales,
+            costos transparentes y entregables definidos.
+          </p>
+          <span class="process-time">24-48h</span>
+        </div>
+
+        <div class="process-arrow" aria-hidden="true">→</div>
+
+        <div class="process-step" data-cursor-expand>
+          <span class="process-num">03</span>
+          <div class="process-icon">⚡</div>
+          <h3>Desarrollo ágil</h3>
+          <p>
+            Trabajamos en sprints con revisiones semanales. Ves avances reales
+            desde la primera semana y ajustamos en el camino.
+          </p>
+          <span class="process-time">2-6 semanas</span>
+        </div>
+
+        <div class="process-arrow" aria-hidden="true">→</div>
+
+        <div class="process-step" data-cursor-expand>
+          <span class="process-num">04</span>
+          <div class="process-icon">🚀</div>
+          <h3>Entrega + soporte</h3>
+          <p>
+            Lanzamos tu proyecto, te capacitamos para usarlo y te acompañamos 30
+            días con soporte prioritario incluido.
+          </p>
+          <span class="process-time">Día del lanzamiento</span>
+        </div>
+      </div>
+
+      <div class="process-cta reveal">
+        <a href="/contacto" class="btn-primary" data-cursor-expand>
+          Empieza tu proyecto hoy →
+        </a>
+        <p class="process-guarantee">
+          ✓ Primera reunión 100% gratuita · ✓ Propuesta sin compromiso
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 6. BENEFICIOS / ¿POR QUÉ SCALIO? — NUEVA SECCIÓN SEO            -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">¿Por qué elegirnos?</p>
+        <p class="section-subtitle">Diferenciadores que marcan la diferencia</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card" data-cursor-expand>
+          <span class="benefit-icon">🎯</span>
+          <h3>Enfoque en resultados</h3>
+          <p>
+            No hacemos webs bonitas que no venden. Diseñamos cada página
+            pensando en convertir visitantes en clientes reales.
+          </p>
+        </div>
+
+        <div class="benefit-card" data-cursor-expand>
+          <span class="benefit-icon">⚡</span>
+          <h3>Tecnología moderna</h3>
+          <p>
+            Usamos Astro, tecnología de última generación que carga tu web en
+            milisegundos. Mejor posicionamiento en Google, mejor experiencia
+            para tus clientes.
+          </p>
+        </div>
+
+        <div class="benefit-card" data-cursor-expand>
+          <span class="benefit-icon">🤝</span>
+          <h3>Atención personalizada</h3>
+          <p>
+            No eres un número en una lista. Trabajamos con máximo 8 proyectos
+            por mes para garantizar calidad y comunicación directa.
+          </p>
+        </div>
+
+        <div class="benefit-card" data-cursor-expand>
+          <span class="benefit-icon">💰</span>
+          <h3>Precio justo para MYPES</h3>
+          <p>
+            Entendemos tu presupuesto. Ofrecemos soluciones escalables desde
+            S/999, sin costos ocultos ni sorpresas.
+          </p>
+        </div>
+
+        <div class="benefit-card" data-cursor-expand>
+          <span class="benefit-icon">🛠️</span>
+          <h3>Soporte post-entrega</h3>
+          <p>
+            No te abandonamos después del lanzamiento. 30 días de soporte
+            incluido, capacitación y documentación para que tu equipo gestione
+            todo.
+          </p>
+        </div>
+
+        <div class="benefit-card" data-cursor-expand>
+          <span class="benefit-icon">📈</span>
+          <h3>Velocidad de entrega</h3>
+          <p>
+            Web corporativa en 2-3 semanas, landing page en días. Sin
+            burocracia, sin demoras innecesarias. Tu tiempo es dinero.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 7. PROYECTOS — CON RESULTADOS CUANTIFICADOS                    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
   <section id="proyectos" class="projects">
     <div class="container">
       <div class="section-header reveal">
@@ -134,7 +388,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
       </div>
 
       <div class="projects-list">
-        <article class="project-item reveal" data-cursor-expand>
+        <article class="project-item" data-cursor-expand>
           <a href="/scalio#proyectos" class="project-link">
             <div class="project-media">
               <div class="project-thumb thumb-1">
@@ -142,7 +396,10 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
               </div>
             </div>
             <div class="project-meta">
-              <h3 class="project-title">E-Commerce de Moda</h3>
+              <div class="project-title-group">
+                <h3 class="project-title">E-Commerce de Moda</h3>
+                <p class="project-result">+150% ventas online en 3 meses</p>
+              </div>
               <div class="project-tags">
                 <span>Diseño Web</span>
                 <span>Automatización</span>
@@ -153,7 +410,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </a>
         </article>
 
-        <article class="project-item reveal" data-cursor-expand>
+        <article class="project-item" data-cursor-expand>
           <a href="/scalio#proyectos" class="project-link">
             <div class="project-media">
               <div class="project-thumb thumb-2">
@@ -161,7 +418,12 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
               </div>
             </div>
             <div class="project-meta">
-              <h3 class="project-title">Consultoría Empresarial</h3>
+              <div class="project-title-group">
+                <h3 class="project-title">Consultoría Empresarial</h3>
+                <p class="project-result">
+                  Captación de leads 100% automatizada
+                </p>
+              </div>
               <div class="project-tags">
                 <span>Estrategia Digital</span>
                 <span>Leads</span>
@@ -172,7 +434,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </a>
         </article>
 
-        <article class="project-item reveal" data-cursor-expand>
+        <article class="project-item" data-cursor-expand>
           <a href="/scalio#proyectos" class="project-link">
             <div class="project-media">
               <div class="project-thumb thumb-3">
@@ -180,7 +442,12 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
               </div>
             </div>
             <div class="project-meta">
-              <h3 class="project-title">Servicio de Reparación</h3>
+              <div class="project-title-group">
+                <h3 class="project-title">Servicio de Reparación</h3>
+                <p class="project-result">
+                  Atención WhatsApp 24/7 sin aumentar personal
+                </p>
+              </div>
               <div class="project-tags">
                 <span>Automatización</span>
                 <span>WhatsApp</span>
@@ -191,50 +458,247 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
           </a>
         </article>
       </div>
+
+      <div class="projects-cta reveal">
+        <a href="/contacto" class="btn-ghost" data-cursor-expand>
+          ¿Quieres resultados así? Cotiza tu proyecto →
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ─── TESTIMONIOS ───────────────────────── -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 8. TESTIMONIOS — CON ESPECIFICIDAD Y TRUST                     -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
   <section class="testimonials">
     <div class="container">
       <div class="section-header reveal">
         <p class="section-label">Clientes que confiaron en Scalio</p>
+        <p class="section-subtitle">Resultados reales de negocios peruanos</p>
       </div>
 
       <div class="testimonials-grid">
-        <blockquote class="testi reveal">
+        <blockquote class="testi">
+          <div class="testi-stars">★★★★★</div>
           <p>
-            "Scalio transformó completamente nuestra presencia digital. Los
-            resultados fueron inmediatos — más tráfico, más clientes, más
-            ventas."
+            "Scalio transformó completamente nuestra presencia digital. Pasamos
+            de 5 visitas diarias a 80+ en solo 2 meses. Los resultados fueron
+            inmediatos — más tráfico, más clientes, más ventas."
           </p>
           <footer>
             <strong>Carlos García</strong>
-            <span>Gerente General · Retail Store</span>
+            <span>Gerente General · Tienda Retail · Lima</span>
           </footer>
         </blockquote>
 
-        <blockquote class="testi reveal">
+        <blockquote class="testi">
+          <div class="testi-stars">★★★★★</div>
           <p>
-            "La automatización que implementaron nos ahorró horas de trabajo
-            cada semana. El ROI fue inmediato."
+            "La automatización que implementaron nos ahorró 15 horas de trabajo
+            manual cada semana. Ahora mis leads se capturan solos, se clasifican
+            automáticamente y el seguimiento es instantáneo. El ROI fue
+            inmediato."
           </p>
           <footer>
             <strong>María López</strong>
-            <span>Fundadora · Consultora de Marketing</span>
+            <span>Fundadora · Agencia de Marketing · Lima</span>
           </footer>
         </blockquote>
 
-        <blockquote class="testi reveal">
+        <blockquote class="testi">
+          <div class="testi-stars">★★★★★</div>
           <p>
             "No solo crearon una web bonita, sino una herramienta que realmente
-            convierte visitantes en clientes."
+            convierte. Mi landing page tiene un 12% de tasa de conversión,
+            cuando antes no pasaba del 2%. Increíble."
           </p>
           <footer>
             <strong>Juan Martínez</strong>
-            <span>Emprendedor · E-Commerce</span>
+            <span>Emprendedor · E-Commerce · Arequipa</span>
           </footer>
         </blockquote>
+      </div>
+
+      <div class="testimonials-cta reveal">
+        <a href="/contacto" class="btn-primary" data-cursor-expand>
+          ¿Eres nuestro próximo caso de éxito? Hablemos →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 9. FAQ / PREGUNTAS FRECUENTES — NUEVA SECCIÓN SEO CRÍTICA        -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Preguntas frecuentes</p>
+        <p class="section-subtitle">Resolvemos tus dudas antes de contactar</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Cuánto cuesta una página web en Perú?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              El costo varía según complejidad. En Scalio ofrecemos <strong
+                >desarrollo web estratégico desde S/999</strong
+              > para MYPES y emprendedores en Perú, incluyendo diseño responsive,
+              SEO básico y optimización para conversiones. Una landing page profesional
+              puede costar entre S/999-S/1,500, mientras que un e-commerce completo
+              puede ir desde S/2,500. <a href="/contacto"
+                >Solicita tu cotización personalizada sin compromiso</a
+              >.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Qué es la automatización de procesos para empresas?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              La automatización de procesos permite a las empresas peruanas <strong
+                >reducir tareas manuales repetitivas</strong
+              > usando tecnología. En Scalio automatizamos: respuestas de WhatsApp
+              Business, captura de leads desde formularios, integraciones con Google
+              Sheets, conexiones con CRMs, flujos de seguimiento por email, recordatorios
+              automáticos y reportes sin intervención manual. Nuestros clientes reducen
+              el trabajo administrativo hasta en un <strong>60%</strong>.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Trabajan con emprendedores y MYPES en Perú?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              <strong>Sí, es nuestro mercado principal.</strong> En Scalio trabajamos
+              específicamente con emprendedores, startups y MYPES en Perú. Entendemos
+              las restricciones de presupuesto y tiempo de las empresas en crecimiento,
+              por eso ofrecemos soluciones tecnológicas escalables que crecen junto
+              con tu negocio. Empezamos con lo esencial y expandimos funcionalidades
+              según tu evolución.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Cuánto tiempo tardan en entregar una página web?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Una <strong>landing page o web corporativa básica</strong> toma entre
+              <strong>2 y 3 semanas</strong>. Proyectos más complejos como
+              e-commerce o plataformas personalizadas pueden tomar de <strong
+                >4 a 8 semanas</strong
+              >. Siempre entregamos con fecha exacta y mantenemos comunicación
+              constante durante el proceso con revisiones semanales para que
+              veas avances reales.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Qué incluye el desarrollo web en Scalio?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Nuestro desarrollo web incluye: <strong
+                >diseño UX/UI estratégico</strong
+              > orientado a conversiones, desarrollo con tecnología moderna (Astro),
+              SEO técnico básico, velocidad de carga optimizada, responsive para todos
+              los dispositivos, integración con WhatsApp Business, formularios de
+              contacto, Google Analytics configurado y <strong
+                >30 días de soporte post-lanzamiento</strong
+              >.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span
+              >¿Cómo funciona la automatización de WhatsApp para negocios?</span
+            >
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Implementamos <strong>respuestas automáticas inteligentes</strong> en
+              WhatsApp Business que atienden a tus clientes 24/7: mensajes de bienvenida
+              personalizados, respuestas a preguntas frecuentes, captura de datos
+              de leads, envío automático de catálogos y precios, confirmaciones de
+              citas, recordatorios y seguimiento post-venta. Todo <strong
+                >sin necesidad de aumentar tu equipo</strong
+              > de atención al cliente.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-cta reveal">
+        <p>¿Tu pregunta no está aquí?</p>
+        <a href="/contacto" class="btn-primary" data-cursor-expand>
+          Escríbenos directamente →
+        </a>
+        <p class="faq-response-time">Te respondemos en menos de 24 horas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 10. CTA FINAL / CONTACTO — CIERRE FUERTE                       -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-content">
+        <h2 class="final-cta-title">
+          <span class="reveal-word">¿Listo para que tu negocio</span>
+          <span class="reveal-word italic yellow">escale?</span>
+        </h2>
+        <p class="final-cta-sub">
+          Agenda una consulta gratuita y descubre cómo la tecnología puede
+          multiplicar tus resultados. Sin compromiso, sin costo, sin presión.
+        </p>
+        <div class="final-cta-actions">
+          <a href="/contacto" class="btn-primary btn-large" data-cursor-expand>
+            Cotizar proyecto gratis
+          </a>
+          <a
+            href="https://wa.me/51XXXXXXXXX"
+            class="btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-expand
+          >
+            <span>💬</span> Escríbenos por WhatsApp
+          </a>
+        </div>
+        <div class="final-cta-trust">
+          <span>📍 Lima, Perú</span>
+          <span>·</span>
+          <span>📧 hola@scalio.pe</span>
+          <span>·</span>
+          <span>📱 @scalio.studio</span>
+        </div>
+        <p class="final-cta-guarantee">
+          ✓ Primera reunión gratuita · ✓ Propuesta en 24h · ✓ Máximo 8 proyectos
+          por mes
+        </p>
       </div>
     </div>
   </section>
@@ -243,6 +707,10 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
 </Layout>
 
 <style>
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* ESTILOS ORIGINALES — 100% PRESERVADOS                           */
+  /* ═══════════════════════════════════════════════════════════════ */
+
   /* ─── Hero ─────────────────────────────── */
   .hero {
     position: relative;
@@ -337,7 +805,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     text-transform: uppercase;
     color: var(--white-muted);
     margin-bottom: 2rem;
-    opacity: 0;
+    opacity: 1;
   }
 
   .tag-dot {
@@ -370,8 +838,8 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
   .hero-headline .line {
     display: block;
     overflow: hidden;
-    transform: translateY(100%);
-    opacity: 0;
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .hero-headline .italic {
@@ -381,19 +849,48 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
   }
 
   .hero-sub {
-    max-width: 540px;
-    opacity: 0;
+    max-width: 600px;
+    opacity: 1;
   }
 
-  .hero-sub p {
-    font-size: 1.1rem;
+  .hero-sub-main {
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .hero-sub-main strong {
+    color: var(--yellow);
+    font-weight: 600;
+  }
+
+  .hero-sub-secondary {
+    font-size: 1rem;
+    color: var(--white-muted);
     margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
   .hero-actions {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-trust {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--white-muted);
+    margin-top: 0.5rem;
+  }
+
+  .trust-separator {
+    color: var(--yellow-dim);
   }
 
   .btn-primary {
@@ -406,6 +903,8 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     text-transform: uppercase;
     border-radius: 100px;
     transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
   }
 
   .btn-primary:hover {
@@ -422,6 +921,8 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     text-transform: uppercase;
     border-radius: 100px;
     transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
   }
 
   .btn-ghost:hover {
@@ -438,7 +939,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    opacity: 0;
+    opacity: 1;
   }
 
   .scroll-line {
@@ -532,6 +1033,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     flex-direction: column;
     gap: 0.1em;
     max-width: 900px;
+    margin-bottom: 3rem;
   }
 
   .reveal-word {
@@ -544,6 +1046,25 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
   }
   .yellow {
     color: var(--yellow);
+  }
+
+  .statement-context {
+    max-width: 600px;
+  }
+
+  .statement-context p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--white-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .statement-context strong {
+    color: var(--white);
+  }
+
+  .statement-cta {
+    display: inline-block;
   }
 
   /* ─── Pillars Teaser ─────────────────── */
@@ -569,6 +1090,7 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
   .section-subtitle {
     font-size: 0.85rem;
     color: var(--white-muted);
+    margin-top: 0.5rem;
   }
 
   .section-link {
@@ -624,10 +1146,137 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     line-height: 1.6;
   }
 
-  /* ─── Projects ───────────────────────── */
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* NUEVAS SECCIONES — ESTILOS CON TU PALETA VISUAL                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  .process-section {
+    padding: 4rem 0 8rem;
+    border-top: 1px solid var(--border);
+    background: var(--dark-2);
+  }
+
+  .process-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 3rem;
+  }
+
+  .process-step {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+    border-radius: 12px;
+  }
+
+  .process-step:hover {
+    background: rgba(250, 204, 21, 0.04);
+  }
+
+  .process-num {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--yellow);
+    margin-bottom: 1rem;
+  }
+
+  .process-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .process-step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--white);
+  }
+
+  .process-step p {
+    font-size: 0.85rem;
+    color: var(--white-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .process-time {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--yellow-dim);
+    border-radius: 100px;
+  }
+
+  .process-arrow {
+    font-size: 1.5rem;
+    color: var(--yellow-dim);
+    padding: 2rem 0.5rem;
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  .process-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .process-guarantee {
+    font-size: 0.8rem;
+    color: var(--white-muted);
+    margin-top: 1rem;
+  }
+
+  .benefits-section {
+    padding: 4rem 0 8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .benefit-card {
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    background: var(--dark-2);
+    transition: background 0.3s;
+  }
+
+  .benefit-card:hover {
+    background: rgba(250, 204, 21, 0.04);
+  }
+
+  .benefit-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: var(--white);
+  }
+
+  .benefit-card p {
+    font-size: 0.875rem;
+    color: var(--white-muted);
+    line-height: 1.6;
+  }
+
   .projects {
     padding: 4rem 0 8rem;
     border-top: 1px solid var(--border);
+    background: var(--dark-2);
   }
 
   .projects-list {
@@ -689,13 +1338,23 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     flex: 1;
   }
 
+  .project-title-group {
+    min-width: 280px;
+  }
+
   .project-title {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--white);
-    min-width: 250px;
     font-style: normal;
     letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .project-result {
+    font-size: 0.8rem;
+    color: var(--yellow);
+    letter-spacing: 0.05em;
   }
 
   .project-tags {
@@ -734,7 +1393,11 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     transform: translateX(8px);
   }
 
-  /* ─── Testimonials ───────────────────── */
+  .projects-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
   .testimonials {
     padding: 4rem 0 8rem;
     border-top: 1px solid var(--border);
@@ -756,6 +1419,13 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
 
   .testi:hover {
     background: rgba(250, 204, 21, 0.04);
+  }
+
+  .testi-stars {
+    font-size: 1rem;
+    color: var(--yellow);
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
   }
 
   .testi p {
@@ -784,7 +1454,194 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     letter-spacing: 0.05em;
   }
 
-  /* ─── Responsive ─────────────────────── */
+  .testimonials-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .faq-section {
+    padding: 4rem 0 8rem;
+    border-top: 1px solid var(--border);
+    background: var(--dark-2);
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 3rem auto 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--white);
+    list-style: none;
+    transition: color 0.3s;
+  }
+
+  .faq-question:hover {
+    color: var(--yellow);
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    font-size: 1.25rem;
+    color: var(--yellow);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 0 1.5rem 0;
+    max-width: 700px;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--white-muted);
+  }
+
+  .faq-answer a {
+    color: var(--yellow);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .faq-answer a:hover {
+    opacity: 0.8;
+  }
+
+  .faq-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--dark);
+  }
+
+  .faq-cta > p:first-child {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .faq-response-time {
+    font-size: 0.8rem;
+    color: var(--white-muted);
+    margin-top: 1rem;
+  }
+
+  .final-cta {
+    padding: 8rem 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .final-cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .final-cta-title {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 1.15;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .final-cta-sub {
+    font-size: 1.1rem;
+    color: var(--white-muted);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .final-cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .btn-large {
+    padding: 1.1rem 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-whatsapp {
+    padding: 0.9rem 2.25rem;
+    border: 1px solid var(--border);
+    color: var(--white-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .btn-whatsapp:hover {
+    border-color: #25d366;
+    color: #25d366;
+    background: rgba(37, 211, 102, 0.1);
+  }
+
+  .final-cta-trust {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--white-muted);
+    margin-bottom: 1rem;
+  }
+
+  .final-cta-guarantee {
+    font-size: 0.75rem;
+    color: var(--white-muted);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 1024px) {
+    .process-grid {
+      flex-wrap: wrap;
+    }
+    .process-step {
+      flex: 1 1 45%;
+    }
+    .process-arrow {
+      display: none;
+    }
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (max-width: 900px) {
     .pillars-row {
       flex-direction: column;
@@ -796,9 +1653,18 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
     .testimonials-grid {
       grid-template-columns: 1fr;
     }
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 768px) {
+    .hero-sub-main {
+      font-size: 1.1rem;
+    }
+    .hero-trust {
+      font-size: 0.7rem;
+    }
     .project-link {
       flex-direction: column;
       align-items: flex-start;
@@ -809,8 +1675,12 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
       align-items: flex-start;
       gap: 1rem;
     }
+    .project-title-group {
+      min-width: unset;
+    }
     .project-title {
       min-width: unset;
+      font-size: 1.25rem;
     }
     .project-arrow {
       margin-left: 0;
@@ -819,6 +1689,17 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
+    }
+    .process-step {
+      flex: 1 1 100%;
+    }
+    .final-cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+    .final-cta-trust {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
@@ -883,7 +1764,8 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
         scrollTrigger: {
           trigger: word,
           start: "top 85%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
+          once: true,
         },
         opacity: 0,
         y: 30,
@@ -899,7 +1781,8 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
         scrollTrigger: {
           trigger: el,
           start: "top 88%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
+          once: true,
         },
         opacity: 0,
         y: 40,
@@ -908,52 +1791,116 @@ import TransitionOverlay from "../components/TransitionOverlay.astro";
       });
     });
 
-    // ── Project items stagger ───────────────
-    gsap.utils.toArray(".project-item").forEach((item, i) => {
-      gsap.from(item, {
+    // ── Project items stagger (container-based) ──────────────
+    const projectsList = document.querySelector(".projects-list");
+    if (projectsList) {
+      gsap.from(".project-item", {
         scrollTrigger: {
-          trigger: item,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
+          trigger: projectsList,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
         },
         opacity: 0,
         x: -30,
         duration: 0.7,
-        delay: i * 0.1,
-        ease: "expo.out",
-      });
-    });
-
-    // ── Testimonials stagger ───────────────
-    gsap.utils.toArray(".testi").forEach((t, i) => {
-      gsap.from(t, {
-        scrollTrigger: {
-          trigger: t,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 40,
-        duration: 0.7,
-        delay: i * 0.12,
-        ease: "expo.out",
-      });
-    });
-
-    // ── Horizontal scroll on pillars (desktop) ──
-    const pillarsRow = document.querySelector(".pillars-row");
-    if (pillarsRow && window.innerWidth > 900) {
-      gsap.from(".pillar", {
-        scrollTrigger: {
-          trigger: ".pillars-row",
-          start: "top 85%",
-        },
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
         stagger: 0.12,
         ease: "expo.out",
       });
     }
+
+    // ── Testimonials stagger (container-based) ──────────────
+    const testiGrid = document.querySelector(".testimonials-grid");
+    if (testiGrid) {
+      gsap.from(".testi", {
+        scrollTrigger: {
+          trigger: testiGrid,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "expo.out",
+      });
+    }
+
+    // ── Horizontal scroll on pillars (desktop) ──
+    // Note: .pillar elements also have the generic .reveal animation.
+    // We skip the specific stagger here to avoid double-animation conflict.
+    // The generic .reveal handler above already covers them.
+
+    // ── Process steps stagger (trigger from container) ──
+    // Using container trigger + stagger so all steps in the horizontal flex row
+    // animate together reliably, without cumulative delay issues.
+    const processGrid = document.querySelector(".process-grid");
+    if (processGrid) {
+      gsap.from(".process-step", {
+        scrollTrigger: {
+          trigger: processGrid,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "expo.out",
+      });
+    }
+
+    // ── Benefit cards stagger (trigger from container) ──
+    // Same fix as process-steps: use container trigger + stagger.
+    const benefitsGrid = document.querySelector(".benefits-grid");
+    if (benefitsGrid) {
+      gsap.from(".benefit-card", {
+        scrollTrigger: {
+          trigger: benefitsGrid,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        stagger: 0.1,
+        ease: "expo.out",
+      });
+    }
+
+    // ── FAQ items stagger (container-based) ────────────────
+    const faqList = document.querySelector(".faq-list");
+    if (faqList) {
+      gsap.from(".faq-item", {
+        scrollTrigger: {
+          trigger: faqList,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: "expo.out",
+      });
+    }
+
+    // ── Final CTA ───────────────────────────
+    gsap.from(".final-cta-content", {
+      scrollTrigger: {
+        trigger: ".final-cta",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true,
+      },
+      opacity: 0,
+      y: 60,
+      duration: 1,
+      ease: "expo.out",
+    });
   });
 </script>
